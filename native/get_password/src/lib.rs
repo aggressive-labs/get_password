@@ -9,7 +9,10 @@ static EMPTY_PASSWORD: &str = "passwords cannot be empty";
 #[rustler::nif]
 pub fn read_password(prompt: String) -> Result<String, String> {
     let stdio = stdin();
-    let mut tty_state = TtyState::new(&stdio);
+    let mut tty_state = match TtyState::new(&stdio) {
+        Ok(state) => state,
+        Err(e) => return Err(e),
+    };
 
     tty_state.save();
     tty_state.set_cooked();

@@ -12,13 +12,15 @@ pub struct TtyState<'a, Fd> {
 impl<'a, Fd: AsFd> TtyState<'a, Fd> {
     const MUST_SAVE: &'static str = "TTY state wasn't saved before setting or restoring mode";
 
-    pub fn new(stdio: &'a Fd) -> Self {
-        assert!(isatty(stdio));
-        Self {
+    pub fn new(stdio: &'a Fd) -> Result<Self, String> {
+        if !isatty(stdio) {
+            return Err("not a tty".to_string());
+        }
+        Ok(Self {
             fd: stdio,
             saved_mode: None,
             cooked_mode: None,
-        }
+        })
     }
 
     pub fn save(&mut self) {
