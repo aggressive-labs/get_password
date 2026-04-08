@@ -4,7 +4,7 @@ defmodule GetPassword.MixProject do
   def project do
     [
       app: :get_password,
-      version: "0.8.0",
+      version: "0.9.0",
       elixir: "~> 1.19",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
@@ -29,10 +29,10 @@ defmodule GetPassword.MixProject do
   defp deps do
     [
       # Dependencies
-      {:rustler, "~> 0.37.1", runtime: false},
+      {:rustler, "~> 0.37.3", runtime: false},
 
       # Dev Dependencies
-      {:ex_doc, "~> 0.34", only: :dev, runtime: false, warn_if_outdated: true}
+      {:ex_doc, "~> 0.40.1", only: :dev, runtime: false, warn_if_outdated: true}
     ]
   end
 
