@@ -27,3 +27,6 @@ get_password-*.tar
 
 # junk left around by inconsiderate operating systems
 .DS_Store
+
+# don't check-in build artifacts
+/priv/native/
