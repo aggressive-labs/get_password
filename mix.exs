@@ -29,7 +29,7 @@ defmodule GetPassword.MixProject do
   defp deps do
     [
       # Dependencies
-      {:rustler, "~> 0.37.3", runtime: false},
+      {:rustler, "~> 0.38.0", runtime: false},
 
       # Dev Dependencies
       {:ex_doc, "~> 0.40.1", only: :dev, runtime: false, warn_if_outdated: true}
