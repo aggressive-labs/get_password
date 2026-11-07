@@ -18,7 +18,7 @@ pub fn read_password(prompt: String) -> Result<String, String> {
     tty_state.set_cooked();
 
     let result = match prompt_password(prompt) {
-        Ok(pw) if pw == "" => Err(EMPTY_PASSWORD.to_string()),
+        Ok(pw) if pw.is_empty() => Err(EMPTY_PASSWORD.to_string()),
         Ok(pw) => Ok(pw),
         Err(err) => Err(err.to_string()),
     };

@@ -1,7 +1,7 @@
 use rustix::fd::AsFd;
 use rustix::termios::OptionalActions::Drain;
-use rustix::termios::{isatty, tcgetattr, tcsetattr};
 use rustix::termios::{InputModes, LocalModes, OutputModes, Termios};
+use rustix::termios::{isatty, tcgetattr, tcsetattr};
 
 pub struct TtyState<'a, Fd> {
     fd: &'a Fd,
