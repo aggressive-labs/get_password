@@ -4,7 +4,7 @@ defmodule GetPassword.MixProject do
   def project do
     [
       app: :get_password,
-      version: "0.9.0",
+      version: "0.9.1",
       elixir: "~> 1.19",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
@@ -12,8 +12,8 @@ defmodule GetPassword.MixProject do
       package: package(),
       # Docs
       name: "GetPassword",
-      source_url: "https://github.com/jvantuyl/get_password",
-      homepage_url: "https://github.com/jvantuyl/get_password",
+      source_url: "https://github.com/aggressive-labs/get_password",
+      homepage_url: "https://github.com/aggressive-labs/get_password",
       docs: &docs/0
     ]
   end
@@ -53,7 +53,7 @@ defmodule GetPassword.MixProject do
       exclude_patterns: ["*.so"],
       licenses: ["Apache-2.0"],
       links: %{
-        "GitHub" => "https://github.com/jvantuyl/get_password"
+        "GitHub" => "https://github.com/aggressive-labs/get_password"
       }
     ]
   end
